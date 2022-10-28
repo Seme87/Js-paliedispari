@@ -2,20 +2,21 @@
 const word= prompt("inserisci una parola!")
 
 let result=false;
+
+
+let newString = "";
 // Creare una funzione per capire se la parola inserita è palindroma
 
   for(let i = word.length-1; i >= 0; i--){
 
-    console.log(word[i], word);
-
-    
-    const wordCont =`${word[i]}`
-    console.log(wordCont);
+     newString += word[i]
 
 
-    /* if(word[i]===word){
+    if(newString ===word[i]){
         result=true;
-    } */
+    }
 
 
   }  
+
+  console.log(result)
