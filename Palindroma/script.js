@@ -1,22 +1,35 @@
-// Chiedere all’utente di inserire una parola
-const word= prompt("inserisci una parola!")
-
-let result=false;
 
 
-let newString = "";
-// Creare una funzione per capire se la parola inserita è palindroma
+// PRENDO INPUT DALL'UTENTE
+const string = prompt('Inserisci una parola');
+  
+  
+// FUNZIONA CHE VERIFICA SE LA PAROLA INSERITA è PALINDROMA O MENO
 
-  for(let i = word.length-1; i >= 0; i--){
+function checkPalindrome(string) {
 
-     newString += word[i]
+    // SALVO LUNGHEZZA DELLA STRINGA IN UNA VARIABILE
+    const len = string.length;
 
+    // CICLO FOR CHE ATTRAVERSA META' DELLA PAROLA
+    for (let i = 0; i < len / 2; i++) {
 
-    if(newString ===word[i]){
-        result=true;
+        // CONDIZIONE CHE CONFRONTA SE IL PRIMO E L'ULTIMO CARATTERE DELLA STRINGA SIANO DIVERSI
+        if (string[i] !== string[len - 1 - i]) {
+            return 'It is not a palindrome';
+        }
     }
+    return 'It is a palindrome';
+}
 
 
-  }  
 
-  console.log(result)
+// SALVO LA FUNZIONE NELLA VARIABILE
+const value = checkPalindrome(string);
+
+console.log(value);
+     
+  
+
+  
+
